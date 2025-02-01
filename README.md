@@ -24,4 +24,4 @@ This project is a simple Python application for managing user skills and their p
 ### Running the Program
 1. Run the program using the following command:
    ```bash
-   python DB_5_Skills_App.py
+   python main.py
