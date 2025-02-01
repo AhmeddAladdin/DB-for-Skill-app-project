@@ -1,5 +1,5 @@
 # Python SQLite Database Project 🐍💾
-
+ 
 ## Project Description
 This project is a simple Python application for managing user skills and their progress using SQLite as the database. It allows users to add, view, update, and delete skills, as well as track the progress of each skill. The application is designed to be user-friendly and efficient for managing personal or professional skill development. 🚀
 
