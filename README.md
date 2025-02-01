@@ -20,7 +20,7 @@ This project is a simple Python application for managing user skills and their p
 1. Download or clone the project from GitHub. 📥
 2. Ensure Python is installed on your system. ✅
 3. Open a terminal or command prompt and navigate to the project folder. 📂
-
+ 
 ### Running the Program
 1. Run the program using the following command:
    ```bash
