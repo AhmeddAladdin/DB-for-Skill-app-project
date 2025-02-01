@@ -39,9 +39,8 @@ lst1 = [
 'Ahmed', 'Ali', 'Khaled', 'Mahmoud', 'Manar', 'Mona', 'Amira', 'Omar', 'Khloud', 'Yousef'
 ]
 
-# for key, user in enumerate(lst1, 100701):
-    
-#    crsr.execute(f"insert into users(name, user_id) values('{user}', {key})")
+#for key, user in enumerate(lst1, 100701): 
+    #crsr.execute(f"insert into users(name, user_id) values('{user}', {key})")
 
 def Save_ans_Close():
     """Commit and close the connection with DB""" 
@@ -90,22 +89,42 @@ def Add_new_skill():
 def Delete_a_skill():
     """Delete the assigned skill"""
     sk = input("Enter skill name: ").strip().capitalize()
-
     crsr.execute(f"delete from skills where name = '{sk}' and user_id = {uid}")
-
     print("Deleted successfully!")
-
     Save_ans_Close()
 
 def Update_skill():
     """Update progress for the assigned skill"""
     sk = input("Enter skill name: ").strip().capitalize()
     prog = float(input("Enter your progress: ").strip())
-
     crsr.execute(f"update skills set progress = {prog} where name = '{sk}' and user_id = {uid}")
-
     print("Updated successfully!")
-
     Save_ans_Close()
 
 while True:
+    # input option choose
+    user_input = input(Input_Message).strip().lower()
+    # check if choise is exists
+    command_lst = ['s', 'a', 'd', 'u', 'q']
+    if user_input in command_lst:
+        if user_input == 's':
+            Show_all_data()
+            break
+        elif user_input == 'a':
+            Add_new_skill()
+            break
+        elif user_input == 'd':
+            Delete_a_skill()
+            break
+        elif user_input == 'u':
+            Update_skill()
+            break
+        else:
+            Save_ans_Close()
+            print("App is Closed, Bye!") 
+            break
+    else: 
+        print(
+        f"Error, this command \"{user_input}\" is't found,"
+          " please choose only one letter from ['s', 'a', 'd', 'u', 'q']")
+    continue
