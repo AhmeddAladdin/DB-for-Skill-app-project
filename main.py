@@ -13,19 +13,14 @@ What do you want to do?
 'u' => update skill progress.
 'q' => Quit App.
 Choose a letter: """
-
 # User ID
 uid = input("Enter your ID: ")
-
 # Import SQLite module
 import sqlite3
-
 # Connect to database
 db = sqlite3.connect("DB_SA.db")
-
 # setting up cursor
 crsr = db.cursor()
-
 # Create tables and columns
 crsr.execute(
     "CREATE TABLE if not exists users (name TEXT, user_id INTEGER)"
@@ -33,21 +28,17 @@ crsr.execute(
 crsr.execute(
     "CREATE TABLE if not exists skills (name TEXT, progress INTEGER, user_id INTEGER)"
 )
-
 # Inserting data
 lst1 = [
 'Ahmed', 'Ali', 'Khaled', 'Mahmoud', 'Manar', 'Mona', 'Amira', 'Omar', 'Khloud', 'Yousef'
 ]
-
 #for key, user in enumerate(lst1, 100701): 
     #crsr.execute(f"insert into users(name, user_id) values('{user}', {key})")
-
 def Save_ans_Close():
     """Commit and close the connection with DB""" 
     db.commit()  # Save changes
     crsr.close()  #close DB
     print("Connection to Database is closed")
-
 # Define methods
 def Show_all_data():
     """Show all data for the assigned ID"""
@@ -60,7 +51,7 @@ def Show_all_data():
         print(f"progress => {user[1]}%,", end=" ")
         print(f"user_id => {user[2]}")
     Save_ans_Close()
-
+    
 def Add_new_skill():
     """Adding a new skill for the assigned ID"""
     sk = input("Enter skill name: ").strip().capitalize()
